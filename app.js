@@ -1,5 +1,5 @@
 const express = require('express')
-const git = require('simple-git')
+const git = require('simple-git/promise')
 require('dotenv').config()
 
 const app = express()
