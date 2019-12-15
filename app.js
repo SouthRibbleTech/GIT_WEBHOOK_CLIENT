@@ -18,7 +18,7 @@ app.post('/api/git', (req, res)=>{
     // .catch((err)=>console.log("Error pulling API repo", err))
     let childProc = shell.exec(process.env.API_BUILD_SCRIPT, {async:true})
     childProc.stdout.on('data', (data)=>{
-        console.log(data)
+        // console.log(data)
     })
     return res.status(200).send("ok")
 })
