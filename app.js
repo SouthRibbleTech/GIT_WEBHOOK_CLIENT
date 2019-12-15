@@ -10,10 +10,11 @@ app.post('/api/git', (req, res)=>{
     const PASS = process.env.GIT_PASS
     const API_REPO_URL = process.env.API_REPO_URL
     const remote = `https://${USER}:${PASS}@${API_REPO_URL}`
-    git().silent(true)
+    git(process.env.API_DIR).silent(true)
     .pull(remote,'master')
     .then(()=>console.log("Pulled API Repo"))
     .catch((err)=>console.log("Error pulling API repo", err))
+    return res.status(200).send("ok")
 })
 
 app.listen(port, ()=>console.log(`Express listening on port ${port}`))
