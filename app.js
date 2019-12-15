@@ -17,4 +17,4 @@ app.post('/api/git', (req, res)=>{
     return res.status(200).send("ok")
 })
 
-app.listen(port, ()=>console.log(`Express listening on port ${port}`))
+app.listen(port, ()=>console.log(`Express listening on port ${port}.`))
